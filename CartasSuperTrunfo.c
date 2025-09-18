@@ -14,6 +14,14 @@ struct Carta {
 int main() {
     struct Carta carta1;
     struct Carta carta2;
+    int opcao;
+    printf("#### Opção #### \n");
+    printf("1. População \n");
+    printf("2. Área \n");
+    scanf("%d", &opcao);
+    
+    
+
 
     // Carta 01
     printf("******** Cadastro da Carta 01: *********\n");
@@ -128,6 +136,38 @@ int main() {
     printf("A densidade demografica da carta 1 é maior que a carta 2? %d \n", carta2.densidadePopulacional2 > carta1.densidadePopulacional1);
     printf("O pib percapito  da  carta 1 é maior que o da carta 2?  %d \n", carta2.pibPercapita2 > carta1.pibPercapita1);
 
+    printf("\n \n ");
     
-    return 0;
+    switch(opcao){
+    case 1: // População
+        if(carta1.populacao > carta2.populacao){
+            printf("Carta 1 venceu!\n");
+        } else if(carta2.populacao > carta1.populacao){
+            printf("Carta 2 venceu!\n");
+        } 
+        break;
+
+    case 2: // Área
+        if(carta1.area > carta2.area){
+            printf("Carta 1 venceu!\n");
+        } else if(carta2.area > carta1.area){
+            printf("Carta 2 venceu!\n");
+        } else {
+            printf("Empate!\n");
+        }
+        break;
+
+    case 3: 
+        if(carta1.populacao == carta2.populacao && carta1.area == carta2.area){
+            printf("O jogo empatou!\n");
+        }
+        break;
+
+    default:
+        printf("Opção inválida.\n");
+        break;
 }
+
+
+     return 0;
+    }
